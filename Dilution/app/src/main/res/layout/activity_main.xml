@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="io.isawesome.albert.dilution.MainActivity">
+
+
+    <!-- C1 TextView, EditText and Spinner-->
+    <TextView
+        android:text="C1"
+        android:textSize="24dp"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvC1"
+        android:layout_alignBottom="@+id/etC1"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/etC1"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/tvC1"
+        android:layout_marginStart="25dp" />
+    <Spinner
+        android:layout_alignParentEnd="true"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:id="@+id/spinC1"
+        android:layout_alignTop="@+id/etC1"
+        android:layout_alignBottom="@+id/etC1"
+        android:layout_toRightOf="@+id/etC1" />
+
+    <!-- V1 TextView, EditText and Spinner -->
+    <TextView
+        android:text="V1"
+        android:textSize="20dp"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvV1"
+        android:layout_below="@+id/tvC1"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentStart="true" />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/etV1"
+        android:layout_alignTop="@+id/tvV1"
+        android:layout_alignStart="@+id/etC1" />
+    <Spinner
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        android:id="@+id/spinV1"
+        android:layout_alignBottom="@+id/etV1"
+        android:layout_toRightOf="@+id/etV1" />
+
+    <!-- C2 TextView, EditText and Spinner -->
+    <TextView
+        android:text="C2"
+        android:textSize="20dp"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvC2"
+        android:layout_below="@+id/tvV1"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp"
+        android:layout_alignEnd="@+id/textView3" />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/etC2"
+        android:layout_alignTop="@+id/tvC2"
+        android:layout_alignStart="@+id/etV1" />
+    <Spinner
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        android:id="@+id/spinC2"
+        android:layout_alignBottom="@+id/etC2"
+        android:layout_toRightOf="@+id/etC2" />
+
+    <!-- V2 TextView, EditText and Spinner -->
+    <TextView
+        android:text="V2"
+        android:textSize="20dp"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvV2"
+        android:layout_below="@+id/tvC2"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp" />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/etV2"
+        android:layout_alignTop="@+id/tvV2"
+        android:layout_alignStart="@+id/etC2" />
+    <Spinner
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        android:id="@+id/spinV2"
+        android:layout_alignTop="@+id/etV2"
+        android:layout_toRightOf="@+id/etV2" />
+
+    <!-- Dilution Factor TextView, EditText -->
+    <TextView
+        android:text="Dilution Factor"
+        android:textSize="20dp"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvDF"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="Solve"
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:onClick="onSolve"
+        android:id="@+id/bSolve"
+        android:layout_above="@+id/tvAnswer"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="11dp" />
+
+    <TextView
+        android:text="Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="48dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/tvAnswer"
+        android:layout_alignParentEnd="true" />
+
+    <EditText
+        android:layout_width="200dp"
+        android:layout_height="30dp"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/editText3"
+        android:layout_alignTop="@+id/tvDF"
+        android:layout_alignParentEnd="true" />
+
+</RelativeLayout>

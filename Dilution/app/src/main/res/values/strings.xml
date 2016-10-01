@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Dilution</string>
+
+    <string-array name="units_array">
+        <item>M</item>
+        <item>nM</item>
+        <item>μM</item>
+    </string-array>
+</resources>
