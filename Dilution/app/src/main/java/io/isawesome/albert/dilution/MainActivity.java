@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import static io.isawesome.albert.dilution.R.id.etDF;
 import static java.lang.Double.parseDouble;
 
 public class MainActivity extends AppCompatActivity {
@@ -20,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     EditText etV1;
     EditText etC2;
     EditText etV2;
+    EditText etDF;
 
     TextView tvC1;
     TextView tvV1;
@@ -60,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
         etV1 = (EditText)findViewById(R.id.etV1);
         etC2 = (EditText)findViewById(R.id.etC2);
         etV2 = (EditText)findViewById(R.id.etV2);
+        etDF = (EditText)findViewById(R.id.etDF);
 
         tvAnswer = (TextView)findViewById(R.id.tvAnswer);
 
@@ -70,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
         double solveV1;
         double solveC2;
         double solveV2;
+        double solveDF;
 
         String testString;
         testString = etC1.getText().toString();
@@ -84,9 +88,12 @@ public class MainActivity extends AppCompatActivity {
         testString = etV2.getText().toString();
         solveV2 = parseDouble(testString);
 
-        Dilution calculator = new Dilution(solveC1, solveV1, solveC2, solveV2);
+        testString = etDF.getText().toString();
+        solveDF = parseDouble(testString);
 
-        testString = "Mark is fat Mark is fatMark is fatMark is fatMark is fatMark is fatMark is fatMark is fatMark is fatMark is fatMark is fatMark is fatMark is fatMark is fatMark is fatMark is fatMark is fat ";
+        Dilution calculator = new Dilution(solveC1, solveV1, solveC2, solveV2, solveDF);
+
+        testString = calculator.getOutput();
         tvAnswer.setText(testString);
         //tvAnswer.setText(etC1.getText().toString());
         Log.d("lala",etC1.getText().toString());
@@ -94,12 +101,13 @@ public class MainActivity extends AppCompatActivity {
 
     public void onReset(View v) {
         String resetString = "0";
-        //resetString = String.valueOf(resetString);
+
         etC1.setText(resetString);
         etV1.setText(resetString);
         etC2.setText(resetString);
         etV2.setText(resetString);
+        etDF.setText(resetString);
 
-        //tvAnswer.setText(" ", TextView.BufferType.NORMAL);
+        tvAnswer.setText("Your answer here", TextView.BufferType.NORMAL);
     }
 }
