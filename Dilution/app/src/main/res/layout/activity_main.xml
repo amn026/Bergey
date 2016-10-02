@@ -18,7 +18,7 @@
         android:layout_width="30dp"
         android:layout_height="wrap_content"
         android:id="@+id/tvC1"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="6dp"
         android:layout_alignTop="@+id/etC1"
         android:layout_alignBottom="@+id/etC1"
         android:layout_alignParentStart="true" />
@@ -51,7 +51,7 @@
         android:id="@+id/tvV1"
         android:layout_below="@+id/tvC1"
         android:layout_alignBottom="@+id/etV1"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="6dp"
         android:layout_alignParentStart="true" />
     <EditText
         android:text="0"
@@ -83,7 +83,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignTop="@+id/etC2"
         android:layout_alignBottom="@+id/etC2"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="6dp" />
     <EditText
         android:text="0"
         android:layout_width="260dp"
@@ -114,7 +114,7 @@
         android:layout_alignTop="@+id/etV2"
         android:layout_alignBottom="@+id/etV2"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="6dp" />
     <EditText
         android:text="0"
         android:layout_width="260dp"
@@ -137,12 +137,23 @@
     <!-- Dilution Factor TextView, EditText -->
     <TextView
         android:text="Dilution Factor"
-        android:textSize="20dp"
-        android:layout_width="140dp"
+        android:textSize="30dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tvDF"
+        android:layout_below="@+id/tvV2"
+        android:layout_marginTop="40dp"
         android:layout_centerVertical="true"
         android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/etDF"
+        android:layout_alignTop="@+id/tvDF"
+        android:layout_alignParentEnd="true" />
 
     <Button
         android:text="Solve"
@@ -150,8 +161,9 @@
         android:layout_height="50dp"
         android:onClick="onSolve"
         android:id="@+id/bSolve"
-        android:layout_above="@+id/tvAnswer"
+        android:layout_below="@+id/etDF"
         android:layout_toLeftOf="@+id/bReset"
+        android:layout_marginTop="15dp"
         android:layout_marginBottom="11dp" />
 
     <Button
@@ -160,29 +172,20 @@
         android:layout_height="50dp"
         android:onClick="onReset"
         android:id="@+id/bReset"
-        android:layout_above="@+id/tvAnswer"
+        android:layout_below="@+id/etDF"
         android:layout_alignParentEnd="true"
-        android:layout_marginBottom="11dp"
-
-        />
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="11dp" />
 
     <TextView
         android:text="Your answer here"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="48dp"
+        android:layout_height="300dp"
+        android:textSize="30dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
         android:id="@+id/tvAnswer"
         android:layout_alignParentEnd="true" />
 
-    <EditText
-        android:layout_width="200dp"
-        android:layout_height="30dp"
-        android:inputType="numberDecimal"
-        android:ems="10"
-        android:id="@+id/editText3"
-        android:layout_alignTop="@+id/tvDF"
-        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>

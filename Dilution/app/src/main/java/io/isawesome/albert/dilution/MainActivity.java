@@ -66,14 +66,27 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onSolve(View v) {
-        double test;
+        double solveC1;
+        double solveV1;
+        double solveC2;
+        double solveV2;
+
         String testString;
-
         testString = etC1.getText().toString();
+        solveC1 = parseDouble(testString);
 
-        test = parseDouble(testString);
-        testString = String.valueOf(test);
+        testString = etV1.getText().toString();
+        solveV1 = parseDouble(testString);
 
+        testString = etC2.getText().toString();
+        solveC2 = parseDouble(testString);
+
+        testString = etV2.getText().toString();
+        solveV2 = parseDouble(testString);
+
+        Dilution calculator = new Dilution(solveC1, solveV1, solveC2, solveV2);
+
+        testString = "Mark is fat Mark is fatMark is fatMark is fatMark is fatMark is fatMark is fatMark is fatMark is fatMark is fatMark is fatMark is fatMark is fatMark is fatMark is fatMark is fatMark is fat ";
         tvAnswer.setText(testString);
         //tvAnswer.setText(etC1.getText().toString());
         Log.d("lala",etC1.getText().toString());

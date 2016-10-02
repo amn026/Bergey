@@ -3,6 +3,7 @@
  * Date: 9/30/2016
  * Dilution calculator for lab work
  */
+package io.isawesome.albert.dilution;
 
 import java.util.Scanner;
 
@@ -17,12 +18,24 @@ public class Dilution {
     private double c2;
     private double v2;
 
+    private double dilutionFactor;
+
     /**
      * No-arg constructor for Dilution
      */
     public Dilution() {
 
     }//End of no-arg constructor
+
+    /**
+     * Four-arg constructor for Dilution
+     */
+    public Dilution(double c1, double v1, double c2, double v2) {
+        setC1(c1);
+        setV1(v1);
+        setC2(c2);
+        setV2(v2);
+    }
 
     /**
      * Accessor to get Concentration of Stock Solution
