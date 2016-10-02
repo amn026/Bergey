@@ -4,7 +4,8 @@ package io.isawesome.albert.dilution;
  * Created by MarkDiez on 10/1/16.
  */
 
-public enum LiquidUnit {
+public enum Unit {
+    MOLE,
     LITER,
     MILLI,
     MICRO,

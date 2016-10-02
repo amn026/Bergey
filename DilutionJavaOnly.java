@@ -32,12 +32,11 @@ public class Dilution {
     /**
      * Four-arg constructor for Dilution
      */
-    public Dilution(double c1, double v1, double c2, double v2, double DF) {
+    public Dilution(double c1, double v1, double c2, double v2) {
         setC1(c1);
         setV1(v1);
         setC2(c2);
         setV2(v2);
-        setDF(DF);
     }
 
     /**
@@ -105,63 +104,21 @@ public class Dilution {
     }
 
     /**
-     * Method setOutput sets the output message.
-     * @param string The new output message.
-     */
-    public void setOutput(String string) {
-        this.output = string;
-    }
-
-    /**
-     * Method getOutput will return the output message.
-     * @return
-     */
-    public String getOutput() {
-        return this.output;
-    }
-
-    /**
-     * Method setDF will set the dilution factor.
-     * @param df The new dilution factor
-     */
-    public void setDF(double df) {
-        this.dilutionFactor = df;
-    }
-
-    /**
-     * Method getDF will return the dilution factor.
-     * @return The dilution factor
-     */
-    public double getDF() {
-        return this.dilutionFactor;
-    }
-
-    private boolean isEmpty(double n) {
-        if (n <= 0) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-    /**
      * Method calculate does the super calculation.
      */
     public void calculate() {
-
-        if (isEmpty(getC1()) && isEmpty(getV1()) && isEmpty(getC2()) && isEmpty(getV2())) {
-            setOutput("You didn't enter anything!");
-        } else if (isEmpty(getC1())) {
+        if (getC1() <= 0) {
             c1Missing();
-        } else if (isEmpty(getC2())) {
+        } else if (getC2() <= 0) {
             c2Missing();
-        } else if (isEmpty(getV1())) {
+        } else if (getV1() <= 0) {
             v1Missing();
-        } else if (isEmpty(getV2())) {
+        } else if (getV2() <= 0) {
             v2Missing();
         } else if ((getC1() * getV1()) != (getC2() * getV2())) {
-            setOutput("Lol you suck at math.");
+            System.out.println("Lol you suck at math.");
         } else {
-            setOutput("What the fuck do you need me for?");
+            System.out.println("What the fuck do you need me for?"); 
         }
     }
 
@@ -172,7 +129,7 @@ public class Dilution {
         double temp;
         temp = getC2() * getV2() / getV1();
         setC1(temp);
-        setOutput("The original stock solution should be " + getC1() +
+        System.out.println("The original stock solution should be " + getC1() +
                            ".");
     }
 
@@ -183,7 +140,7 @@ public class Dilution {
         double temp;
         temp = getC1() * getV1() / getV2();
         setC2(temp);
-        setOutput("The final concentration of the diluted solution" +
+        System.out.println("The final concentration of the diluted solution" + 
                            "will be: " + getC2() + ".");
     }
 
@@ -194,7 +151,7 @@ public class Dilution {
         double temp;
         temp = getC2() * getV2() / getC1();
         setV1(temp);
-        setOutput("Use " + getV1() + " amount of stock solution " +
+        System.out.println("Use " + getV1() + " amount of stock solution " +
                            "and add " + diluent() + " amount of diluent.");
     }
 
@@ -205,7 +162,7 @@ public class Dilution {
         double temp;
         temp = getC1() * getV1() / getC2();
         setV2(temp);
-        setOutput("This is the amount of solution you will end" +
+        System.out.println("This is the amount of solution you will end" +
                            "up with: " + getV2() + ".");
     }
 
@@ -221,11 +178,10 @@ public class Dilution {
      * Method reset sets all the variables to zero for recalculation
      */
     public void reset() {
-        setC1(0);
-        setV1(0);
-        setC2(0);
-        setV2(0);
-        setOutput(null);
+        c1 = 0;
+        v1 = 0;
+        c2 = 0;
+        v2 = 0;
     } 
         
     public static void main(String[] args) {

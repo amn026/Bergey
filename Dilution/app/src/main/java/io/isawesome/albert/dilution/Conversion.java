@@ -11,10 +11,11 @@ public class Conversion {
      * @param value - current amount
      * @return
      */
-    public static double convertToLiter(LiquidUnit currentMetric, double value) {
+    public static double convertToBase(Unit currentMetric, double value) {
         double newValue = 0;
 
         switch(currentMetric) {
+            case MOLE:
             case LITER:
                 newValue = value;
                 break;
@@ -34,14 +35,15 @@ public class Conversion {
 
     /**
      * Converts a liquid measurement to milli_
-     * @param currentMetric - "from"  
+     * @param currentMetric - "from"
      * @param value - current amount
      * @return
      */
-    public static double convertToMilli(LiquidUnit currentMetric, double value) {
+    public static double convertToMilli(Unit currentMetric, double value) {
         double newValue = 0;
 
         switch(currentMetric) {
+            case MOLE:
             case LITER:
                 newValue = value * 1000;
                 break;
@@ -58,10 +60,11 @@ public class Conversion {
         return newValue;
     }
 
-    public static double convertToMicro(LiquidUnit currentMetric, double value) {
+    public static double convertToMicro(Unit currentMetric, double value) {
         double newValue = 0;
 
         switch(currentMetric) {
+            case MOLE:
             case LITER:
                 newValue = value * 1000000;
                 break;
@@ -78,10 +81,11 @@ public class Conversion {
         return newValue;
     }
 
-    public static double convertToNano(LiquidUnit currentMetric, double value) {
+    public static double convertToNano(Unit currentMetric, double value) {
         double newValue = 0;
 
         switch(currentMetric) {
+            case MOLE:
             case LITER:
                 newValue = value * 1000000000;
                 break;
