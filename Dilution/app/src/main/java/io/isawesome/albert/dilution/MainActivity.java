@@ -77,7 +77,27 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public Unit getUnit(int pos) {
+        // Position is based on the order in strings array from 0
+        switch (pos) {
+            case 0:
+                return Unit.LITER; // Or mole, doesn't matter
+            case 1:
+                return Unit.MILLI;
+            case 2:
+                return Unit.MICRO;
+            case 3:
+                return Unit.NANO;
+            default:
+                break;
+        }
+
+        // Should never reach this
+        return null;
+    }
+
     public void onSolve(View v) {
+        Unit c1, v1, c2, v2;
         double solveC1;
         double solveV1;
         double solveC2;
@@ -86,19 +106,28 @@ public class MainActivity extends AppCompatActivity {
 
         String testString;
         testString = etC1.getText().toString();
+        c1 = getUnit(spinC1.getSelectedItemPosition());
         solveC1 = parseDouble(testString);
 
         testString = etV1.getText().toString();
+        v1 = getUnit(spinV1.getSelectedItemPosition());
         solveV1 = parseDouble(testString);
 
         testString = etC2.getText().toString();
+        c2 = getUnit(spinC2.getSelectedItemPosition());
         solveC2 = parseDouble(testString);
 
         testString = etV2.getText().toString();
+        v2 = getUnit(spinV2.getSelectedItemPosition());
         solveV2 = parseDouble(testString);
 
         testString = etDF.getText().toString();
         solveDF = parseDouble(testString);
+
+        solveC1 = Conversion.convertToBase(c1, solveC1);
+        solveV1 = Conversion.convertToBase(v1, solveV1);
+        solveC2 = Conversion.convertToBase(c2, solveC2);
+        solveV2 = Conversion.convertToBase(v2, solveV2);
 
         Dilution calculator = new Dilution(solveC1, solveV1, solveC2, solveV2, solveDF);
         calculator.calculate();
