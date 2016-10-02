@@ -136,17 +136,27 @@ public class Dilution {
         return this.dilutionFactor;
     }
 
+    private boolean isEmpty(double n) {
+        if (n <= 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
     /**
      * Method calculate does the super calculation.
      */
     public void calculate() {
-        if (getC1() <= 0) {
+
+        if (isEmpty(getC1()) && isEmpty(getV1()) && isEmpty(getC2()) && isEmpty(getV2())) {
+            setOutput("You didn't enter anything!");
+        } else if (isEmpty(getC1())) {
             c1Missing();
-        } else if (getC2() <= 0) {
+        } else if (isEmpty(getC2())) {
             c2Missing();
-        } else if (getV1() <= 0) {
+        } else if (isEmpty(getV1())) {
             v1Missing();
-        } else if (getV2() <= 0) {
+        } else if (isEmpty(getV2())) {
             v2Missing();
         } else if ((getC1() * getV1()) != (getC2() * getV2())) {
             setOutput("Lol you suck at math.");

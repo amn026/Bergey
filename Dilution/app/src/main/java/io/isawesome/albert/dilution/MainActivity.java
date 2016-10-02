@@ -92,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
         solveDF = parseDouble(testString);
 
         Dilution calculator = new Dilution(solveC1, solveV1, solveC2, solveV2, solveDF);
+        calculator.calculate();
 
         testString = calculator.getOutput();
         tvAnswer.setText(testString);
