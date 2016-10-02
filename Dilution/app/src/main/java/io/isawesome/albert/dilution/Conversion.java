@@ -101,4 +101,39 @@ public class Conversion {
         }
         return newValue;
     }
+
+    public static Unit getUnit(int pos) {
+        // Position is based on the order in strings array from 0
+        switch (pos) {
+            case 0:
+                return Unit.LITER; // Or mole, doesn't matter
+            case 1:
+                return Unit.MILLI;
+            case 2:
+                return Unit.MICRO;
+            case 3:
+                return Unit.NANO;
+            default:
+                break;
+        }
+
+        // Should never reach this
+        return null;
+    }
+
+    public static double convertTo(Unit wantedUnit, Unit currentUnit, double value) {
+        switch(wantedUnit) {
+            case MOLE:
+            case LITER:
+                return convertToBase(currentUnit, value);
+            case MILLI:
+                return convertToMilli(currentUnit, value);
+            case MICRO:
+                return convertToMicro(currentUnit, value);
+            case NANO:
+                return convertToNano(currentUnit, value);
+            default:
+                return value;
+        }
+    }
 }
