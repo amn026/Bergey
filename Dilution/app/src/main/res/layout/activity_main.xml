@@ -23,7 +23,7 @@
         android:layout_alignBottom="@+id/etC1"
         android:layout_alignParentStart="true" />
     <EditText
-        android:layout_width="wrap_content"
+        android:layout_width="260dp"
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
         android:ems="10"
@@ -36,6 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:id="@+id/spinC1"
+        android:layout_marginLeft="10dp"
         android:layout_alignTop="@+id/etC1"
         android:layout_alignBottom="@+id/etC1"
         android:layout_toRightOf="@+id/etC1" />
@@ -52,7 +53,7 @@
         android:layout_marginTop="10dp"
         android:layout_alignParentStart="true" />
     <EditText
-        android:layout_width="wrap_content"
+        android:layout_width="260dp"
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
         android:ems="10"
@@ -63,6 +64,7 @@
         android:layout_width="50dp"
         android:layout_height="30dp"
         android:id="@+id/spinV1"
+        android:layout_marginLeft="10dp"
         android:layout_alignTop="@+id/etV1"
         android:layout_alignBottom="@+id/etV1"
         android:layout_toRightOf="@+id/etV1"
@@ -81,7 +83,7 @@
         android:layout_alignBottom="@+id/etC2"
         android:layout_marginTop="10dp" />
     <EditText
-        android:layout_width="wrap_content"
+        android:layout_width="260dp"
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
         android:ems="10"
@@ -92,6 +94,7 @@
         android:layout_width="50dp"
         android:layout_height="30dp"
         android:id="@+id/spinC2"
+        android:layout_marginLeft="10dp"
         android:layout_alignTop="@+id/etC2"
         android:layout_alignBottom="@+id/etC2"
         android:layout_alignParentRight="true"
@@ -110,7 +113,7 @@
         android:layout_alignParentStart="true"
         android:layout_marginTop="10dp" />
     <EditText
-        android:layout_width="wrap_content"
+        android:layout_width="260dp"
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
         android:ems="10"
@@ -121,6 +124,7 @@
         android:layout_width="50dp"
         android:layout_height="30dp"
         android:id="@+id/spinV2"
+        android:layout_marginLeft="10dp"
         android:layout_alignTop="@+id/etV2"
         android:layout_alignBottom="@+id/etV2"
         android:layout_alignParentRight="true"
@@ -147,7 +151,7 @@
         android:layout_marginBottom="11dp" />
 
     <TextView
-        android:text="Name"
+        android:text="Your answer here"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="48dp"
