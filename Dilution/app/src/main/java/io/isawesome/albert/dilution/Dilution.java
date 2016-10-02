@@ -17,6 +17,7 @@ public class Dilution {
     private double v1;
     private double c2;
     private double v2;
+    Unit uc1,uv1,uc2,uv2;
 
     private double dilutionFactor;
 
@@ -32,12 +33,18 @@ public class Dilution {
     /**
      * Four-arg constructor for Dilution
      */
-    public Dilution(double c1, double v1, double c2, double v2, double DF) {
+    public Dilution(double c1, double v1, double c2, double v2, double DF,
+                    Unit uc1, Unit uv1, Unit uc2, Unit uv2) {
         setC1(c1);
         setV1(v1);
         setC2(c2);
         setV2(v2);
         setDF(DF);
+
+        this.uc1 = uc1;
+        this.uv1 = uv1;
+        this.uc2 = uc2;
+        this.uv2 = uv2;
     }
 
     /**
@@ -171,6 +178,7 @@ public class Dilution {
     private void c1Missing() {
         double temp;
         temp = getC2() * getV2() / getV1();
+        temp = Conversion.convertTo(uc1, temp);
         setC1(temp);
         setOutput("The original stock solution should be " + getC1() +
                            ".");
@@ -182,6 +190,7 @@ public class Dilution {
     private void c2Missing() {
         double temp;
         temp = getC1() * getV1() / getV2();
+        temp = Conversion.convertTo(uc2, temp);
         setC2(temp);
         setOutput("The final concentration of the diluted solution" +
                            "will be: " + getC2() + ".");
@@ -193,6 +202,7 @@ public class Dilution {
     private void v1Missing() {
         double temp;
         temp = getC2() * getV2() / getC1();
+        temp = Conversion.convertTo(uv1, temp);
         setV1(temp);
         setOutput("Use " + getV1() + " amount of stock solution " +
                            "and add " + diluent() + " amount of diluent.");
@@ -204,6 +214,7 @@ public class Dilution {
     private void v2Missing() {
         double temp;
         temp = getC1() * getV1() / getC2();
+        temp = Conversion.convertTo(uv2, temp);
         setV2(temp);
         setOutput("This is the amount of solution you will end" +
                            "up with: " + getV2() + ".");

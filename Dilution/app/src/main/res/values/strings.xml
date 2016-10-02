@@ -3,7 +3,15 @@
 
     <string-array name="units_array">
         <item>M</item>
-        <item>nM</item>
+        <item>mM</item>
         <item>μM</item>
+        <item>nM</item>
+    </string-array>
+
+    <string-array name="units_array_2">
+        <item>L</item>
+        <item>mL</item>
+        <item>μL</item>
+        <item>nL</item>
     </string-array>
 </resources>
