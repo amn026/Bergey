@@ -18,8 +18,9 @@
         android:layout_width="30dp"
         android:layout_height="wrap_content"
         android:id="@+id/tvC1"
+        android:layout_marginTop="10dp"
+        android:layout_alignTop="@+id/etC1"
         android:layout_alignBottom="@+id/etC1"
-        android:layout_alignParentTop="true"
         android:layout_alignParentStart="true" />
     <EditText
         android:layout_width="wrap_content"
@@ -42,77 +43,87 @@
     <!-- V1 TextView, EditText and Spinner -->
     <TextView
         android:text="V1"
-        android:textSize="20dp"
+        android:textSize="24dp"
         android:layout_width="30dp"
         android:layout_height="wrap_content"
         android:id="@+id/tvV1"
         android:layout_below="@+id/tvC1"
+        android:layout_alignBottom="@+id/etV1"
         android:layout_marginTop="10dp"
         android:layout_alignParentStart="true" />
     <EditText
         android:layout_width="wrap_content"
-        android:layout_height="30dp"
+        android:layout_height="wrap_content"
         android:inputType="numberDecimal"
         android:ems="10"
         android:id="@+id/etV1"
-        android:layout_alignTop="@+id/tvV1"
+        android:layout_below="@+id/tvC1"
         android:layout_alignStart="@+id/etC1" />
     <Spinner
         android:layout_width="50dp"
         android:layout_height="30dp"
         android:id="@+id/spinV1"
+        android:layout_alignTop="@+id/etV1"
         android:layout_alignBottom="@+id/etV1"
-        android:layout_toRightOf="@+id/etV1" />
+        android:layout_toRightOf="@+id/etV1"
+        android:layout_alignParentEnd="true"/>
 
     <!-- C2 TextView, EditText and Spinner -->
     <TextView
         android:text="C2"
-        android:textSize="20dp"
+        android:textSize="24dp"
         android:layout_width="30dp"
         android:layout_height="wrap_content"
         android:id="@+id/tvC2"
         android:layout_below="@+id/tvV1"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="10dp"
-        android:layout_alignEnd="@+id/textView3" />
+        android:layout_alignTop="@+id/etC2"
+        android:layout_alignBottom="@+id/etC2"
+        android:layout_marginTop="10dp" />
     <EditText
         android:layout_width="wrap_content"
-        android:layout_height="30dp"
+        android:layout_height="wrap_content"
         android:inputType="numberDecimal"
         android:ems="10"
         android:id="@+id/etC2"
-        android:layout_alignTop="@+id/tvC2"
+        android:layout_below="@+id/etV1"
         android:layout_alignStart="@+id/etV1" />
     <Spinner
         android:layout_width="50dp"
         android:layout_height="30dp"
         android:id="@+id/spinC2"
+        android:layout_alignTop="@+id/etC2"
         android:layout_alignBottom="@+id/etC2"
+        android:layout_alignParentRight="true"
         android:layout_toRightOf="@+id/etC2" />
 
     <!-- V2 TextView, EditText and Spinner -->
     <TextView
         android:text="V2"
-        android:textSize="20dp"
+        android:textSize="24dp"
         android:layout_width="30dp"
         android:layout_height="wrap_content"
         android:id="@+id/tvV2"
         android:layout_below="@+id/tvC2"
+        android:layout_alignTop="@+id/etV2"
+        android:layout_alignBottom="@+id/etV2"
         android:layout_alignParentStart="true"
         android:layout_marginTop="10dp" />
     <EditText
         android:layout_width="wrap_content"
-        android:layout_height="30dp"
+        android:layout_height="wrap_content"
         android:inputType="numberDecimal"
         android:ems="10"
         android:id="@+id/etV2"
-        android:layout_alignTop="@+id/tvV2"
+        android:layout_below="@+id/etC2"
         android:layout_alignStart="@+id/etC2" />
     <Spinner
         android:layout_width="50dp"
         android:layout_height="30dp"
         android:id="@+id/spinV2"
         android:layout_alignTop="@+id/etV2"
+        android:layout_alignBottom="@+id/etV2"
+        android:layout_alignParentRight="true"
         android:layout_toRightOf="@+id/etV2" />
 
     <!-- Dilution Factor TextView, EditText -->
