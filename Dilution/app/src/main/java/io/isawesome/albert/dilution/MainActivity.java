@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
         spinC2 = (Spinner)findViewById(R.id.spinC2);
         spinC2.setAdapter(adapterC2);
         spinV2 = (Spinner)findViewById(R.id.spinV2);
-        spinV1.setAdapter(adapterV2);
+        spinV2.setAdapter(adapterV2);
 
         etC1 = (EditText)findViewById(R.id.etC1);
         etV1 = (EditText)findViewById(R.id.etV1);

@@ -121,7 +121,8 @@ public class Conversion {
         return null;
     }
 
-    public static double convertTo(Unit wantedUnit, Unit currentUnit, double value) {
+    public static double convertTo(Unit wantedUnit, double value) {
+        Unit currentUnit = Unit.LITER;
         switch(wantedUnit) {
             case MOLE:
             case LITER:

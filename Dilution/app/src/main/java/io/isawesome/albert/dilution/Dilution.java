@@ -178,6 +178,7 @@ public class Dilution {
     private void c1Missing() {
         double temp;
         temp = getC2() * getV2() / getV1();
+        temp = Conversion.convertTo(uc1, temp);
         setC1(temp);
         setOutput("The original stock solution should be " + getC1() +
                            ".");
@@ -189,6 +190,7 @@ public class Dilution {
     private void c2Missing() {
         double temp;
         temp = getC1() * getV1() / getV2();
+        temp = Conversion.convertTo(uc2, temp);
         setC2(temp);
         setOutput("The final concentration of the diluted solution" +
                            "will be: " + getC2() + ".");
@@ -200,6 +202,7 @@ public class Dilution {
     private void v1Missing() {
         double temp;
         temp = getC2() * getV2() / getC1();
+        temp = Conversion.convertTo(uv1, temp);
         setV1(temp);
         setOutput("Use " + getV1() + " amount of stock solution " +
                            "and add " + diluent() + " amount of diluent.");
@@ -211,6 +214,7 @@ public class Dilution {
     private void v2Missing() {
         double temp;
         temp = getC1() * getV1() / getC2();
+        temp = Conversion.convertTo(uv2, temp);
         setV2(temp);
         setOutput("This is the amount of solution you will end" +
                            "up with: " + getV2() + ".");
