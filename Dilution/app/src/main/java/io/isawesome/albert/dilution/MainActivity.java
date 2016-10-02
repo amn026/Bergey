@@ -46,17 +46,26 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         List<String> a = new ArrayList<String>();
-        String[] myResArray = getResources().getStringArray(R.array.units_array);
-        a = Arrays.asList(myResArray);
+        List<String> b = new ArrayList<String>();
+        String[] cArray = getResources().getStringArray(R.array.units_array);
+        String[] lArray = getResources().getStringArray(R.array.units_array_2);
+        a = Arrays.asList(cArray);
+        b = Arrays.asList(lArray);
 
-        ItemAdapter adapter = new ItemAdapter(this, a);
+        ItemAdapter adapterC1 = new ItemAdapter(this, a);
+        ItemAdapter adapterC2 = new ItemAdapter(this, a);
+        ItemAdapter adapterV1 = new ItemAdapter(this, b);
+        ItemAdapter adapterV2 = new ItemAdapter(this, b);
 
         //Initialize boxes and spinners
         spinC1 = (Spinner)findViewById(R.id.spinC1);
-        spinC1.setAdapter(adapter);
+        spinC1.setAdapter(adapterC1);
         spinV1 = (Spinner)findViewById(R.id.spinV1);
+        spinV1.setAdapter(adapterV1);
         spinC2 = (Spinner)findViewById(R.id.spinC2);
+        spinC2.setAdapter(adapterC2);
         spinV2 = (Spinner)findViewById(R.id.spinV2);
+        spinV1.setAdapter(adapterV2);
 
         etC1 = (EditText)findViewById(R.id.etC1);
         etV1 = (EditText)findViewById(R.id.etV1);

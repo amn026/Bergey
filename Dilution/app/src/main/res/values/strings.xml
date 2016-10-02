@@ -6,4 +6,10 @@
         <item>nM</item>
         <item>μM</item>
     </string-array>
+
+    <string-array name="units_array_2">
+        <item>L</item>
+        <item>nL</item>
+        <item>μL</item>
+    </string-array>
 </resources>
